@@ -1,4 +1,4 @@
-project name="My Project" default="help" basedir="."> 
+ <project name="My Project" default="help" basedir="."> 
    <!-- Define the properties used by the build --> 
    <property name="app.name"      value="helloWorld"/> 
    <property name="app.version"   value="0.1-dev"/> 
@@ -6,8 +6,7 @@ project name="My Project" default="help" basedir=".">
    <property name="work.home"    value="${basedir}/work"/> 
    <property name="dist.home"     value="${basedir}/dist"/> 
    <property name="src.home"      value="${basedir}/src"/> 
-  <property name="web.home"      value="${basedir}/web"/> 
- 
+   <property name="web.home"      value="${basedir}/web"/> 
 
    <target name="help"> 
      <echo>You can use the following targets:</echo> 
@@ -22,7 +21,6 @@ project name="My Project" default="help" basedir=".">
      <echo>prompt> ant all </echo> 
    </target> 
  
-
    <!-- Define the CLASSPATH --> 
    <path id="compile.classpath"> 
      <fileset dir="${tcserver.home}/bin"> 
@@ -34,7 +32,6 @@ project name="My Project" default="help" basedir=".">
      </fileset> 
    </path> 
  
-
    <target name="all" depends="clean,compile,dist" 
            description="Clean work dirs, then compile and create a WAR"/> 
  
@@ -43,7 +40,6 @@ project name="My Project" default="help" basedir=".">
      <delete dir="${work.home}"/> 
      <delete dir="${dist.home}"/> 
    </target> 
- 
  
    <target name="prepare" depends="clean" 
            description="Create working dirs and copy static files to work dir"> 
@@ -68,12 +64,10 @@ project name="My Project" default="help" basedir=".">
    </target> 
  
  
-
    <target name="dist" depends="compile" 
            description="Create WAR file for binary distribution"> 
      <jar jarfile="${dist.home}/${app.name}-${app.version}.war" 
           basedir="${work.home}"/> 
    </target> 
- 
 
  </project>  
